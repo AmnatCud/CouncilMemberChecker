@@ -2,26 +2,28 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>ตรวจสอบรายชื่อสมาชิกสภา</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ตรวจสอบรายชื่อ</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen px-4">
 
-<div class="bg-gray-800 p-6 rounded-2xl shadow-xl w-96 text-center">
+<div class="bg-gray-800 p-6 rounded-2xl shadow-xl w-full max-w-md text-center">
 
-<h1 class="text-xl mb-4">🔍 ตรวจสอบรายชื่อ</h1>
+<h1 class="text-xl md:text-2xl mb-4">🔍 ตรวจสอบรายชื่อสมาชิกสภา 2569</h1>
 
 <input id="name" 
-       class="w-full p-2 mb-3 text-black rounded"
+       class="w-full p-3 mb-3 text-black rounded text-base"
        placeholder="พิมพ์ชื่อ เช่น ธน หรือ อาร์ม"
        onkeypress="if(event.key==='Enter') search()">
 
-<button onclick="search()" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+<button onclick="search()" 
+        class="w-full bg-blue-500 px-4 py-3 rounded hover:bg-blue-600 text-base">
 ค้นหา
 </button>
 
-<div id="result" class="mt-4 text-left"></div>
+<div id="result" class="mt-4 text-left text-sm md:text-base"></div>
 
 </div>
 
@@ -43,7 +45,7 @@ async function search() {
     data.data.forEach(item => {
       html += `
         <div class="bg-gray-700 p-4 rounded mb-3">
-          <div class="text-lg font-bold">👤 ${item.name}</div>
+          <div class="font-bold text-base md:text-lg">👤 ${item.name}</div>
           <div>🏷️ ชื่อเล่น: ${item.nickname || "-"}</div>
           <div>🏫 ห้อง: ${item.room}</div>
           <div>🔢 เลขที่: ${item.number}</div>
