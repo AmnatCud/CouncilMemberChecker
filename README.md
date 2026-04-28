@@ -33,3 +33,6 @@ A web-based system for verifying council member information using Google Sheets 
 
 ## 📎 Notes
 This project was built as part of a portfolio to demonstrate web development and API integration skills.
+
+## 📷 Preview
+![Preview](./preview.png)
