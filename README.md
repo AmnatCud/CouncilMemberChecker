@@ -20,7 +20,7 @@ A web-based system for verifying council member information using Google Sheets 
 👉 [Website Demo Click](https://amnatcud.github.io/CouncilMemberChecker/)
 
 ## 📷 Preview
-(Optional: add screenshot here)
+![Preview](./preview.png)
 
 ## ⚙️ How It Works
 1. Data is stored in Google Sheets
@@ -34,5 +34,3 @@ A web-based system for verifying council member information using Google Sheets 
 ## 📎 Notes
 This project was built as part of a portfolio to demonstrate web development and API integration skills.
 
-## 📷 Preview
-![Preview](./preview.png)
