@@ -17,7 +17,7 @@ A web-based system for verifying council member information using Google Sheets 
 - GitHub Pages (Deployment)
 
 ## 🌐 Demo
-👉 https://your-username.github.io/your-repo-name/
+👉 [https://your-username.github.io/your-repo-name/](https://amnatcud.github.io/Council-Member-Checker/)
 
 ## 📷 Preview
 (Optional: add screenshot here)
