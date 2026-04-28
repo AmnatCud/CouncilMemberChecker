@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ตรวจสอบรายชื่อสมาชิกสภา</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+
+<div class="bg-gray-800 p-6 rounded-2xl shadow-xl w-96 text-center">
+
+<h1 class="text-xl mb-4">🔍 ตรวจสอบรายชื่อ</h1>
+
+<input id="name" 
+       class="w-full p-2 mb-3 text-black rounded"
+       placeholder="พิมพ์ชื่อ เช่น ธน หรือ อาร์ม"
+       onkeypress="if(event.key==='Enter') search()">
+
+<button onclick="search()" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+ค้นหา
+</button>
+
+<div id="result" class="mt-4 text-left"></div>
+
+</div>
+
+<script>
+async function search() {
+  const name = document.getElementById("name").value;
+
+  const result = document.getElementById("result");
+  result.innerHTML = "⏳ กำลังค้นหา...";
+
+  const url = "https://script.google.com/macros/s/AKfycbxXCmodq46NfHzo3PajRoSbtaKP-BKWUEu8HrkMMsiWJ511uFq_XDBkLoaIHYZJYFEYuQ/exec";
+
+  const res = await fetch(`${url}?name=${name}`);
+  const data = await res.json();
+
+  if (data.found) {
+    let html = "";
+
+    data.data.forEach(item => {
+      html += `
+        <div class="bg-gray-700 p-4 rounded mb-3">
+          <div class="text-lg font-bold">👤 ${item.name}</div>
+          <div>🏷️ ชื่อเล่น: ${item.nickname || "-"}</div>
+          <div>🏫 ห้อง: ${item.room}</div>
+          <div>🔢 เลขที่: ${item.number}</div>
+          <div>🏢 ฝ่าย: ${item.department}</div>
+        </div>
+      `;
+    });
+
+    result.innerHTML = html;
+  } else {
+    result.innerHTML = "❌ ไม่พบข้อมูล";
+  }
+}
+</script>
+
+</body>
+</html>
