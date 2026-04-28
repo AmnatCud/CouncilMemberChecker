@@ -1,4 +1,4 @@
-# Council Member Verification System
+# Council Member Checker
 
 ## 📌 Description
 A web-based system for verifying council member information using Google Sheets as a real-time database with search functionality.
