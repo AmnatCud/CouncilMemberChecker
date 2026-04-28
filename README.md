@@ -29,7 +29,7 @@ A web-based system for verifying council member information using Google Sheets 
 4. Results are displayed dynamically
 
 ## 👨‍💻 Author
-- Arm (Student Developer)
+- Amnat Buttho (Student Developer)
 
 ## 📎 Notes
 This project was built as part of a portfolio to demonstrate web development and API integration skills.
